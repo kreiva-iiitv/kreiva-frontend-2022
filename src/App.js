@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+
+import Events from './components/Events/events.component';
+import Timeline from './components/Timeline/timeline.component';
+import Hero from './components/Hero/hero.component';
+import Navbar from './components/Navbar/navbar.component';
+import Sponsors from './components/Sponsors/sponsors.component';
+import Team from './components/Team/team.component';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Hero />
+              <Events />
+              <Timeline />
+              <Team />
+              <Sponsors />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
